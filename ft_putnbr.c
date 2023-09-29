@@ -6,7 +6,7 @@
 /*   By: amema <amema@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 11:48:34 by amema             #+#    #+#             */
-/*   Updated: 2023/09/27 17:13:18 by amema            ###   ########.fr       */
+/*   Updated: 2023/09/28 12:39:26 by amema            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
 //     return ft_strlen(str);
 // }
 
-int ft_putnbr(int nb, int i)
+int ft_putnbr(int nb)
 {
     char *str;
     if (nb == -2147483648)
@@ -43,7 +43,7 @@ int ft_putnbr(int nb, int i)
     return ft_strlen(str); // Restituisce la lunghezza della stringa
 }
 
-int ft_putnbr_un(unsigned int nb, int i)
+int ft_putnbr_un(unsigned int nb)
 {
     char *str;
     str = ft_itoa(nb); // converte l'intero in una stringa

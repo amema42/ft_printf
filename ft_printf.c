@@ -6,7 +6,7 @@
 /*   By: amema <amema@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 16:29:18 by amema             #+#    #+#             */
-/*   Updated: 2023/09/27 17:08:58 by amema            ###   ########.fr       */
+/*   Updated: 2023/09/28 12:46:36 by amema            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,11 @@ void ft_type(va_list args, const char c, int *n)
         *n += ft_putptr(va_arg(args, unsigned long long));
     }
     else if (c == 'd' || c == 'i')
-        *n += ft_putnbr(va_arg(args, int), 1);
+        *n += ft_putnbr(va_arg(args, int));
     else if (c == 'u')
-        *n += ft_putnbr_un(va_arg(args, unsigned int), 1);
+        *n += ft_putnbr_un(va_arg(args, unsigned int));
     else if (c == 'x' || c == 'X')
-        *n += ft_exa(va_arg(args, unsigned int), c, 1);
+        *n += ft_hex(va_arg(args, unsigned int), c, 1);
     else if (c == '%')
         *n += ft_putchar('%');
 }

@@ -6,7 +6,7 @@
 /*   By: amema <amema@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 10:09:49 by amema             #+#    #+#             */
-/*   Updated: 2023/09/27 17:10:35 by amema            ###   ########.fr       */
+/*   Updated: 2023/09/29 14:19:51 by amema            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_putchar(char c)
 	return (1);
 }
 
-int	ft_strlen(char *str)
+size_t	ft_strlen(const char *str)
 {
 	unsigned int	i;
 

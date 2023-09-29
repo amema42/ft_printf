@@ -6,7 +6,7 @@
 /*   By: amema <amema@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 10:25:27 by amema             #+#    #+#             */
-/*   Updated: 2023/09/27 17:14:01 by amema            ###   ########.fr       */
+/*   Updated: 2023/09/27 18:40:16 by amema            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int ft_hex(unsigned int n, const char format, int i)
 {
 	if (n >= 16)
-	return ft_exa(n / 16, format, i + 1);
+	return ft_hex(n / 16, format, i + 1);
 
 	if (format == 'x')
 		write(1, &"0123456789abcdef"[n % 16], 1);
