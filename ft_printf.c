@@ -6,14 +6,16 @@
 /*   By: amema <amema@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 16:29:18 by amema             #+#    #+#             */
-/*   Updated: 2023/09/28 12:46:36 by amema            ###   ########.fr       */
+/*   Updated: 2023/09/29 17:11:39 by amema            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h" // Assumendo che ft_putchar, ft_putstr, ft_putptr, ft_putnbr, ft_putnbr_un e ft_hex siano definite in ft_printf.h
+#include "ft_printf.h" // Assumendo che ft_putchar, ft_putstr, ft_putptr, ft_putnbr, ft_putnbr_s e ft_hex siano definite in ft_printf.h
 
 void ft_type(va_list args, const char c, int *n)
 {
+    int i;
+    i = 1;
     if (c == 'c')
         *n += ft_putchar(va_arg(args, int));
     else if (c == 's')
@@ -21,12 +23,12 @@ void ft_type(va_list args, const char c, int *n)
     else if (c == 'p')
     {
         *n += ft_putstr("0x");
-        *n += ft_putptr(va_arg(args, unsigned long long));
+        *n += ft_putptr(va_arg(args, unsigned long long), i);
     }
     else if (c == 'd' || c == 'i')
-        *n += ft_putnbr(va_arg(args, int));
+        *n += ft_putnbr(va_arg(args, int), 1);
     else if (c == 'u')
-        *n += ft_putnbr_un(va_arg(args, unsigned int));
+        *n += ft_putnbr_s(va_arg(args, unsigned int), 1);
     else if (c == 'x' || c == 'X')
         *n += ft_hex(va_arg(args, unsigned int), c, 1);
     else if (c == '%')

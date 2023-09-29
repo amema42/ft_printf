@@ -6,7 +6,7 @@
 /*   By: amema <amema@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 10:25:27 by amema             #+#    #+#             */
-/*   Updated: 2023/09/27 18:40:16 by amema            ###   ########.fr       */
+/*   Updated: 2023/09/29 15:21:26 by amema            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,14 @@
 int ft_hex(unsigned int n, const char format, int i)
 {
 	if (n >= 16)
-	return ft_hex(n / 16, format, i + 1);
+	{
+		i++;
+		i = ft_hex(n / 16, format, i);
+	}
 
 	if (format == 'x')
-		write(1, &"0123456789abcdef"[n % 16], 1);
+		ft_putchar("0123456789abcdef"[n % 16]);
 	if (format == 'X')
-		write(1, &"0123456789ABCDEF"[n % 16], 1);
+		ft_putchar("0123456789ABCDEF"[n % 16]);
 	return (i);
 }
