@@ -6,11 +6,11 @@
 /*   By: amema <amema@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 10:09:49 by amema             #+#    #+#             */
-/*   Updated: 2023/09/29 15:10:41 by amema            ###   ########.fr       */
+/*   Updated: 2023/10/03 13:09:16 by amema            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include  "ft_printf.h"
+#include "ft_printf.h"
 
 int	ft_putchar(char c)
 {
@@ -30,20 +30,20 @@ size_t	ft_strlen(const char *str)
 
 int	ft_putstr(char *str)
 {
+	int	i;
+
 	if (str == NULL)
 	{
 		write(1, "(null)", 6);
-		return ft_strlen("(null)");
+		return (ft_strlen("(null)"));
 	}
-
-	int i;
 	i = 0;
 	while (str[i])
 	{
 		write(1, &str[i], 1);
 		i++;
 	}
-	return i;
+	return (i);
 }
 
 // static size_t	ft_lenght(long nb)

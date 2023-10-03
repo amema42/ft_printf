@@ -1,3 +1,4 @@
+
 NAME = libftprintf.a
 
 SRCS =	ft_hex.c\
