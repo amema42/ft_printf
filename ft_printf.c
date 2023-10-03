@@ -6,7 +6,7 @@
 /*   By: amema <amema@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 16:29:18 by amema             #+#    #+#             */
-/*   Updated: 2023/09/29 17:11:39 by amema            ###   ########.fr       */
+/*   Updated: 2023/10/03 12:47:25 by amema            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,9 @@ void ft_type(va_list args, const char c, int *n)
         *n += ft_putstr(va_arg(args, char *));
     else if (c == 'p')
     {
+        unsigned long long ptr = va_arg(args, unsigned long long);
         *n += ft_putstr("0x");
-        *n += ft_putptr(va_arg(args, unsigned long long), i);
+        *n += ft_putptr(ptr, 0);
     }
     else if (c == 'd' || c == 'i')
         *n += ft_putnbr(va_arg(args, int), 1);
@@ -34,28 +35,6 @@ void ft_type(va_list args, const char c, int *n)
     else if (c == '%')
         *n += ft_putchar('%');
 }
-
-
-// void ft_format(va_list args, const char c, int *nchar)
-// {
-//     if (c == 'c')
-//         *nchar += ft_putchar(va_arg(args, int));
-//     else if (c == 's')
-//         *nchar += ft_putstr(va_arg(args, char *));
-//     else if (c == 'p')
-//     {
-//         *nchar += ft_putstr("0x");
-//         *nchar += ft_putptr(va_arg(args, unsigned long long), 1);
-//     }
-//     else if (c == 'd' || c == 'i')
-//         *nchar += ft_putnbr(va_arg(args, int), 1);
-//     else if (c == 'u')
-//         *nchar += ft_putnbr_un(va_arg(args, unsigned int), 1);
-//     else if (c == 'x' || c == 'X')
-//         *nchar += ft_exa(va_arg(args, unsigned int), c, 1);
-//     else if (c == '%')
-//         *nchar += ft_putchar('%');
-// }
 
 int ft_printf(const char *str, ...)
 {

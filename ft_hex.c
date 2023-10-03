@@ -6,20 +6,19 @@
 /*   By: amema <amema@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/27 10:25:27 by amema             #+#    #+#             */
-/*   Updated: 2023/09/29 15:21:26 by amema            ###   ########.fr       */
+/*   Updated: 2023/10/03 12:50:03 by amema            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int ft_hex(unsigned int n, const char format, int i)
+int	ft_hex(unsigned int n, const char format, int i)
 {
 	if (n >= 16)
 	{
 		i++;
 		i = ft_hex(n / 16, format, i);
 	}
-
 	if (format == 'x')
 		ft_putchar("0123456789abcdef"[n % 16]);
 	if (format == 'X')
